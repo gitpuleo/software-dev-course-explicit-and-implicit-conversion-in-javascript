@@ -25,12 +25,12 @@ code when it produces a result of 3. No error.
 let result = "5" - 2;
 console.log("The result is: " + result);
 
-/* Perhaps there is a logic error here? In that even though the boolean is false, isValid is true
-and so "This is valid" prints. Perhaps you should inset a not operator, !, then? Otherwise I cannot
-see what is wrong with this code which runs just fine. 
+/* Although the code runs just fine, there is a logic error: when coerced to boolean a string which
+is not empty is true, so the string "false" actually ends up being true and so the conditionl prints
+this is valid. To remedy this, add the not operator, !, to the function. 
 */
 let isValid = Boolean("false");
-if (isValid) {
+if (!isValid) {
     console.log("This is valid!");
 }
 
